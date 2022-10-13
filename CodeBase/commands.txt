@@ -1,0 +1,11 @@
+# testing the tool with the test data to generate required files for the challenge
+python cli.py --file_path=data\test_blank.csv --mode=test
+
+# testing the tool with known keywords already cached, this will also work for non cached keywords but will take longer to get results
+
+## generating both keywords and ranked papers for a given search term
+python cli.py --search_terms="affinity" --generate_keywords=True --rank_papers=True --mode=train
+## generating keywords for a given search term
+python cli.py --search_terms="affinity;Protein A;electrophoresis" --generate_keywords=True --rank_papers=False --mode=train
+## generating ranked papers for a given search term
+python cli.py --search_terms="affinity;Protein A;electrophoresis" --generate_keywords=False --rank_papers=True --mode=train
